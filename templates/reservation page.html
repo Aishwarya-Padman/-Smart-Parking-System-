@@ -1,0 +1,25 @@
+b<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation - Parking Reservation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Reserve a Parking Spot</h2>
+        <form id="reservationForm" onsubmit="return handleReservation(event)">
+            <select id="carSelect" required>
+                <option value="">Select Car</option>
+                <!-- Car options will be populated here -->
+            </select>
+            <input type="datetime-local" id="reservationTime" required>
+            <button type="submit">Reserve</button>
+        </form>
+        <p>Back to <a href="{{ url_for('index') }}">Login</a></p>
+        <p>View available cars: <a href="car_details.html">Car Details</a></p>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

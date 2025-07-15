@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Reservation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Reserve Your Parking Slot</h1>
+        <div class="parking-slots">
+            <!-- Parking slots will be dynamically generated here -->
+        </div>
+        <div id="reservation-details" class="hidden">
+            <h2>Reservation Details</h2>
+            <p id="slot-info"></p>
+            <button onclick="confirmReservation()">Confirm Reservation</button>
+        </div>
+        <div class="car-details-form">
+            <h2>Enter Car Details</h2>
+            <form id="carDetailsForm">
+                <input type="text" id="carMake" name="carMake" placeholder="Car Make" required>
+                <input type="text" id="carModel" name="carModel" placeholder="Car Model" required>
+                <input type="text" id="carYear" name="carYear" placeholder="Car Year" required>
+                <input type="text" id="carLicense" name="carLicense" placeholder="License Plate" required>
+                <button type="submit">Submit Car Details</button>
+            </form>
+        </div>
+        
+    </div>
+    <script src="{{ url_for('static', filename='reservation.js') }}"></script>
+</body>
+</html>
